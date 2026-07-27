@@ -1,0 +1,77 @@
+/*
+Problem    : Palindrome String
+Platform   : Basic Programming
+Topic      : Strings
+Difficulty : Easy
+
+Approach:
+Compare characters from the beginning and the end.
+If all pairs match, the string is a palindrome.
+
+Time Complexity  : O(n)
+Space Complexity : O(1)
+*/
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        boolean palindrome = true;
+        int left = 0;
+        int right = str.length() - 1;
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                palindrome = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+
+        if (palindrome) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+
+        sc.close();
+    }
+}
+/*
+Problem    : Palindrome String
+Platform   : Basic Programming
+Topic      : Strings
+Difficulty : Easy
+
+Approach:
+Reverse the string using StringBuilder and compare it
+with the original string.
+
+Time Complexity  : O(n)
+Space Complexity : O(n)
+*/
+
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        String rev = new StringBuilder(str).reverse().toString();
+
+        if (str.equals(rev)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+
+        sc.close();
+    }
+}
